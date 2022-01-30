@@ -9,20 +9,20 @@ app.url_map.strict_slashes = False
 
 @app.route('/')
 def hello_route():
-        """ return Hello HBNB! """
-            return 'Hello HBNB!'
+    """ return Hello HBNB! """
+    return 'Hello HBNB!'
 
 
-        @app.route('/hbnb')
-        def hbnb_route():
-                """ return HBNB """
-                    return 'HBNB'
+@app.route('/hbnb')
+def hbnb_route():
+    """ return HBNB """
+    return 'HBNB'
 
 
-                @app.route('/c/<text>')
-                def c_route(text):
-                        """ return c followed by the value of the text variable """
-                            return "C {}".format(text.replace("_", " "))
+@app.route('/c/<text>')
+def c_route(text):
+    """ return c followed by the value of the text variable """
+    return "C {}".format(text.replace("_", " "))
 
-                        if __name__ == '__main__':
-                                app.run(debug=True, port=5000, host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(debug=True, port=5000, host='0.0.0.0')
